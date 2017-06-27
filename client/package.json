@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "redux": "^3.7.1",
     "victory": "^0.21.0"
   },
   "devDependencies": {
