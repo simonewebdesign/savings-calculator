@@ -10,7 +10,8 @@
     "victory": "^0.21.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.7",
+    "redux-devtools": "^3.4.0"
   },
   "proxy": "http://localhost:3001/",
   "scripts": {
