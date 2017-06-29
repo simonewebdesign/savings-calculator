@@ -15,6 +15,10 @@ There is one basic test written in the client, which you can run by performing
 Mocha has been installed on the server to allow you to create server tests,
 although none have been written yet.
 
+### Running the test suite
+
+To run the API acceptance tests, run `yarn test` from the project root directory.
+
 ## The Challenge
 
 Create a web-app that shows how much you can expect to make from your savings
