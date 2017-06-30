@@ -30,7 +30,7 @@ The app must satisfy the following Acceptance Criteria (ACs):
 over the next 50 years, to a monthly precision. This should assume that the monthly amount is paid in each month, and the value rises with the interest rate supplied.
 - [ ] It should allow the user to select how often interest is paid - either 'Monthly', 'Quarterly' or 'Annually'
 - [ ] It should allow the user to optionally select another currency to display the results in. If this is selected, it should convert the results using the latest exchange rate from GBP via a 3rd party API (e.g. [Fixer](http://fixer.io/))
-- [ ] All calculations must take place server-side, and all monthly projection data should be returned via an endpoint
+- [x] All calculations must take place server-side, and all monthly projection data should be returned via an endpoint
 - [x] The calculations must be triggered onChange of any input, to give live feedback on the input data.
 - [x] You should manage app state using Redux (even though it is arguably overkill in this particular case)
 
