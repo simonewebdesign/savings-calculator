@@ -22,15 +22,28 @@ app.get('/', (req, res) => {
   });
 });
 
-app.post('/', (req, res) => {
-  const {initialSavings,
-         monthlySavings,
-         interestRate} = req.body
+/*
 
-  const result = calculator(initialSavings, monthlySavings, interestRate)
+Expects JSON data in the following format:
 
+    {
+      "initialSavings": positive int,
+      "monthlySavings": positive int,
+      "interestRate": positive int
+    }
+
+Returns:
+
+    {
+      "error": boolean,
+      "result": array
+    }
+
+*/
+app.post('/api/calculate-earnings', (req, res) => {
+  const result = calculator(req.body)
   res.json({
     error: false,
-    result: result
+    result
   });
 });

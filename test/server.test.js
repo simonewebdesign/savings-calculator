@@ -21,12 +21,14 @@ describe('The API endpoint', () => {
 
   it('should be a successful POST', done => {
     const initialSavings = 1000
-
+    const reqParams = {
+      initialSavings: initialSavings,
+      monthlySavings: 200,
+      interestRate: 3
+    }
     server
-    .post('/')
-    .send({initialSavings: initialSavings,
-           monthlySavings: 200,
-           interestRate: 3})
+    .post('/api/calculate-earnings')
+    .send(reqParams)
     .set('Accept', /application\/json/)
     .expect('Content-type', /json/)
     .expect(200)
