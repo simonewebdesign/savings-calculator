@@ -1,7 +1,5 @@
 import * as types from '../constants/ActionTypes'
 
-export const noop = () => ({type: types.NOOP })
-
 export const requestCalculation = (params, json) => ({
   type: types.REQUEST_CALCULATION,
   params

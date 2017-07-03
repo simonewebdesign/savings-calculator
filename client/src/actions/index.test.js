@@ -15,24 +15,15 @@ describe('Actions', () => {
   fetchMock.post('/api/calculate-earnings', expectedResult);
 
 
-  it('noop should create NOOP action', () => {
-    expect(actions.noop()).toEqual({
-      type: types.NOOP
-    })
-  })
-
-
   it('requestCalculation should create REQUEST_CALCULATION action', () => {
     expect(actions.requestCalculation()).toEqual({
       type: types.REQUEST_CALCULATION
     })
   })
 
-
   it('receiveResult should create RECEIVE_RESULT action', () => {
     expect(actions.receiveResult()).toHaveProperty('type', types.RECEIVE_RESULT)
   })
-
 
   it('fetchResult should create both REQUEST_CALCULATION and RECEIVE_RESULT actions', () => {
     const store = mockStore({})
@@ -41,7 +32,6 @@ describe('Actions', () => {
       monthlySavings: 50,
       interestRate: 2
     }
-
     return store.dispatch(actions.fetchResult(params))
       .then(() => {
         const actions = store.getActions()

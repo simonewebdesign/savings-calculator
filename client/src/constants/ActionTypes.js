@@ -1,3 +1,2 @@
-export const NOOP = 'NOOP'
 export const REQUEST_CALCULATION = 'REQUEST_CALCULATION'
 export const RECEIVE_RESULT = 'RECEIVE_RESULT'

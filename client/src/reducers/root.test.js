@@ -27,28 +27,6 @@ describe('The root reducer', () => {
     ).toEqual(initialState)
   })
 
-  it('can handle NOOP', () => {
-    expect(
-      root({
-        fields: {
-          initialSavings: 0,
-          monthlySavings: 0,
-          interestRate: 4
-        },
-        amounts: []
-      }, {
-        type: types.NOOP
-      })
-    ).toEqual({
-      fields: {
-        initialSavings: 0,
-        monthlySavings: 0,
-        interestRate: 4
-      },
-      amounts: []
-    })
-  })
-
   it('can handle REQUEST_CALCULATION', () => {
     expect(
       root(sampleState, {type: types.REQUEST_CALCULATION})

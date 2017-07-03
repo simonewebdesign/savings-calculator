@@ -1,5 +1,4 @@
 import {
-  NOOP,
   REQUEST_CALCULATION,
   RECEIVE_RESULT
 } from '../constants/ActionTypes'
@@ -22,8 +21,6 @@ export default (state = initialState, action) => {
       }
 
     case REQUEST_CALCULATION:
-
-    case NOOP:
 
     default:
       return state
