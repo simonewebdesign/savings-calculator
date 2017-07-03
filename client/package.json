@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "nock": "^9.0.13",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
@@ -13,7 +14,7 @@
     "react-scripts": "1.0.7",
     "redux-devtools": "^3.4.0"
   },
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
