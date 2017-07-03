@@ -30,7 +30,8 @@ export default class CurrencyInput extends Component {
 		return (
 			<div className={`currency-input ${defaultValue !== undefined ? 'default-value' : ''}`}>
 				<span>£</span>
-				<input type="text"
+				<input type="number"
+					min="0"
 					value={value}
 					onChange={this.handleChange.bind(this)}
 					onFocus={this.handleFocus.bind(this)}/>
