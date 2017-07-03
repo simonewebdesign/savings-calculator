@@ -22,7 +22,6 @@ class App extends Component {
       <div className="App">
         <div className="header-banner">
           <h1 className="fmz-white-font">Finimize Interest Rate Calculator</h1>
-          <button onClick={this.handleClick.bind(this)}>Calculate!</button>
         </div>
         <div className="financial-inputs">
           <p className="input-label">How much have you saved?</p>
