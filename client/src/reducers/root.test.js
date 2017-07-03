@@ -33,4 +33,13 @@ describe('The root reducer', () => {
     ).toBe(sampleState)
   })
 
+  it('can handle RECEIVE_RESULT', () => {
+    expect(
+      root(sampleState, {
+        type: types.RECEIVE_RESULT,
+        result: {result: [123, 456]
+      }})
+    ).toHaveProperty('amounts', [123, 456])
+  })
+
 })
