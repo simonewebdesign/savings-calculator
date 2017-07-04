@@ -5,21 +5,8 @@ const server = supertest.agent('http://localhost:3001');
 
 /* Acceptance tests for the API */
 
-describe('The API endpoint', () => {
-  it('should be a successful GET', done => {
-    server
-    .get('/')
-    .expect('Content-type', /json/)
-    .expect(200)
-    .end((err,res) => {
-      res.status.should.equal(200);
-      res.body.error.should.equal(false);
-      res.body.message.should.equal('Hello there!');
-      done();
-    });
-  });
-
-  it('should be a successful POST', done => {
+describe('The API', () => {
+  it('POST /api/calculate-earnings', done => {
     const initialSavings = 1000
     const reqParams = {
       initialSavings: initialSavings,

@@ -15,13 +15,6 @@ app.listen(app.get('port'), () => {
   console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });
 
-app.get('/', (req, res) => {
-  res.json({
-    error: false,
-    message: 'Hello there!'
-  });
-});
-
 /*
 
 Expects JSON data in the following format:
