@@ -4,9 +4,10 @@ import './CurrencyInput.css'
 
 export default function CurrencyInput(props) {
 	return (
-		<div className={`currency-input ${props.defaultValue !== undefined ? 'default-value' : ''}`}>
+		<div className="currency-input">
 			<span>£</span>
 			<input type="number"
+				name={props.name}
 				min="0"
 				value={props.value}
 				onChange={props.onChange}/>
@@ -15,7 +16,7 @@ export default function CurrencyInput(props) {
 }
 
 CurrencyInput.propTypes = {
-	defaultValue: PropTypes.number,
+	name: PropTypes.string,
 	value: PropTypes.number,
 	onChange: PropTypes.func
 }

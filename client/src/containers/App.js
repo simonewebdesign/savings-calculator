@@ -25,13 +25,13 @@ class App extends Component {
         </div>
         <div className="financial-inputs">
           <p className="input-label">How much have you saved?</p>
-          <CurrencyInput name="savings" defaultValue={0}/>
+          <CurrencyInput name="initialSavings" onChange={handleChange.bind(this.props)}/>
 
           <p className="input-label">How much will you save each month?</p>
-          <CurrencyInput name="monthlySavings" defaultValue={0}/>
+          <CurrencyInput name="monthlySavings" onChange={handleChange.bind(this.props)}/>
 
           <p className="input-label">How much interest will you earn per year?</p>
-          <SliderInput name="interestRate" defaultValue={4}/>
+          <SliderInput name="interestRate" onChange={handleChange.bind(this.props)} value={this.props.root.fields.interestRate}/>
         </div>
         <div className="financial-display">
           <DisplayGraph data={data}/>
@@ -45,6 +45,17 @@ App.propTypes = {
   root: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired
+}
+
+function handleChange(event) {
+  const {dispatch, root} = this,
+        {name, value}    = event.target,
+        newFields = {
+          ...root.fields,
+          [name]: value
+        }
+
+  dispatch(Actions.changeField(name, value))
 }
 
 const mapStateToProps = state => ({
