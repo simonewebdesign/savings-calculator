@@ -3347,6 +3347,10 @@ istanbul-reports@^1.1.1:
   dependencies:
     handlebars "^4.0.3"
 
+javascript-debounce@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/javascript-debounce/-/javascript-debounce-1.0.0.tgz#6c7fc8485e73faa422fe5a96351edb257fb0a400"
+
 jest-changed-files@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-20.0.3.tgz#9394d5cc65c438406149bef1bf4d52b68e03e3f8"
