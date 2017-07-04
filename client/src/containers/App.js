@@ -50,12 +50,13 @@ App.propTypes = {
 function handleChange(event) {
   const {dispatch, root} = this,
         {name, value}    = event.target,
+        newValue = parseFloat(value),
         newFields = {
           ...root.fields,
-          [name]: value
+          [name]: newValue
         }
-
-  dispatch(Actions.changeField(name, value))
+  dispatch(Actions.changeField(name, newValue))
+  dispatch(Actions.fetchResult(newFields))
 }
 
 const mapStateToProps = state => ({
