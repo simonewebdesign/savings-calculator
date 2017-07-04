@@ -7,7 +7,8 @@ describe('The root reducer', () => {
     fields: {
       initialSavings: 0,
       monthlySavings: 0,
-      interestRate: 4
+      interestRate: 4,
+      interestFrequency: 'Monthly'
     },
     amounts: []
   }
@@ -16,7 +17,8 @@ describe('The root reducer', () => {
     fields: {
       initialSavings: 1000,
       monthlySavings: 200,
-      interestRate: 3
+      interestRate: 3,
+      interestFrequency: 'Annually'
     },
     amounts: []
   }
@@ -34,7 +36,20 @@ describe('The root reducer', () => {
       fields: {
         initialSavings: 50,
         monthlySavings: 200,
-        interestRate: 3
+        interestRate: 3,
+        interestFrequency: 'Annually'
+      },
+      amounts: []
+    })
+
+    expect(
+      root(sampleState, {type: types.CHANGE_FIELD, name: 'interestFrequency', value: 'Quarterly'})
+    ).toEqual({
+      fields: {
+        initialSavings: 1000,
+        monthlySavings: 200,
+        interestRate: 3,
+        interestFrequency: 'Quarterly'
       },
       amounts: []
     })

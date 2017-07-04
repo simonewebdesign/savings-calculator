@@ -8,7 +8,8 @@ const initialState = {
   fields: {
     initialSavings: 0,
     monthlySavings: 0,
-    interestRate: 4
+    interestRate: 4,
+    interestFrequency: 'Monthly'
   },
   amounts: []
 }

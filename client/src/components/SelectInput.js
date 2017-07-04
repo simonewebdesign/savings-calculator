@@ -7,10 +7,11 @@ export default function SelectInput({name, value, onChange, options}) {
     <div className="select-input">
       <select
         name={name}
-        onChange={onChange}>
+        onChange={onChange}
+        value={value}>
         {
           options.map(v =>
-            <option key={v} value={v} selected={v === value}>{v}</option>
+            <option key={v} value={v}>{v}</option>
           )
         }
       </select>

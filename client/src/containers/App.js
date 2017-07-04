@@ -13,10 +13,6 @@ import './App.css'
 
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const data = this.props.root.amounts.map((a, idx) => ({month: idx+1, amount: a}))
     return (
@@ -32,7 +28,10 @@ class App extends Component {
           <CurrencyInput name="monthlySavings" onChange={handleChange.bind(this.props)}/>
 
           <p className="input-label">How often will the interest be paid?</p>
-          <SelectInput name="interestFrequency" onChange={handleChange.bind(this.props)} options={['Monthly', 'Quarterly', 'Annually']}/>
+          <SelectInput name="interestFrequency"
+            onChange={handleChange.bind(this.props)}
+            options={['Monthly', 'Quarterly', 'Annually']}
+            value={this.props.root.fields.interestFrequency}/>
 
           <p className="input-label">How much interest will you earn per year?</p>
           <SliderInput name="interestRate" onChange={handleChange.bind(this.props)} value={this.props.root.fields.interestRate}/>
@@ -53,8 +52,8 @@ App.propTypes = {
 
 function handleChange(event) {
   const {dispatch, root} = this,
-        {name, value}    = event.target,
-        newValue = parseFloat(value),
+        {name, value} = event.target,
+        newValue = name === 'interestFrequency' ? value : parseFloat(value),
         newFields = {
           ...root.fields,
           [name]: newValue
