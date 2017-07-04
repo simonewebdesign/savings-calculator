@@ -27,6 +27,19 @@ describe('The root reducer', () => {
     ).toEqual(initialState)
   })
 
+  it('can handle CHANGE_FIELD', () => {
+    expect(
+      root(sampleState, {type: types.CHANGE_FIELD, name: 'initialSavings', value: 50})
+    ).toEqual({
+      fields: {
+        initialSavings: 50,
+        monthlySavings: 200,
+        interestRate: 3
+      },
+      amounts: []
+    })
+  })
+
   it('can handle REQUEST_CALCULATION', () => {
     expect(
       root(sampleState, {type: types.REQUEST_CALCULATION})

@@ -15,6 +15,14 @@ describe('Actions', () => {
   fetchMock.post('/api/calculate-earnings', expectedResult);
 
 
+  it('changeField should create CHANGE_FIELD action', () => {
+    expect(actions.changeField('some_field', 'new value')).toEqual({
+      type: types.CHANGE_FIELD,
+      name: 'some_field',
+      value: 'new value'
+    })
+  })
+
   it('requestCalculation should create REQUEST_CALCULATION action', () => {
     expect(actions.requestCalculation()).toEqual({
       type: types.REQUEST_CALCULATION
