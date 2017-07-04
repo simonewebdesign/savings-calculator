@@ -1,11 +1,5 @@
 import * as types from '../constants/ActionTypes'
 
-export const changeField = (name, value) => ({
-  type: types.CHANGE_FIELD,
-  name,
-  value
-})
-
 export const requestCalculation = (params, json) => ({
   type: types.REQUEST_CALCULATION,
   params

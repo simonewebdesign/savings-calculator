@@ -1,5 +1,4 @@
 import {
-  CHANGE_FIELD,
   REQUEST_CALCULATION,
   RECEIVE_RESULT
 } from '../constants/ActionTypes'
@@ -15,15 +14,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_FIELD:
-      return {
-        ...state,
-        fields: {
-          ...state.fields,
-          [action.name]: action.value
-        },
-      }
-
     case RECEIVE_RESULT:
       return {
         ...state,
