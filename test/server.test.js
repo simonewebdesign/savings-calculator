@@ -20,6 +20,7 @@ describe('The API', () => {
     .expect('Content-type', /json/)
     .expect(200)
     .end((err,res) => {
+      if (!res) throw new Error('Server not started. Start it with `yarn start` and try again.')
       res.status.should.equal(200);
       res.body.error.should.equal(false);
       res.body.result[0].should.equal(initialSavings);
